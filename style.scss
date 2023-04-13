@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap');
+$fonts: 'Archivo', sans-serif;
+$color: #002947;
+$textcolor: #fff;
+$color2: #024B5C;
+$color3: rgba(255, 255, 255, 0.3);
+$color4: #00B2DB;
+$color5: #E47C29;
+
+@mixin flexprob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#container {
+    width: 600px;
+}
+
+h4 {
+    font-size: 28px !important;
+    margin-bottom: 0 !important;
+}
+
+.font400 {
+    font-weight: 400;
+    font-family: 'Archivo', sans-serif;
+}
+
+.font500 {
+    font-weight: 500;
+    font-family: 'Archivo', sans-serif;
+}
+
+.font600 {
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+}
+
+
+.box {
+    background-color: $color;
+    margin: 30px auto;
+    height: auto;
+    box-shadow: 1px 2px 5px 5px lightgrey;
+    color: #fff;
+    height: 75vw;
+}
+
+.time i,
+.team i {
+    font-size: 20px;
+}
+
+.time p {
+    background: $color2;
+    padding: 5px 20px;
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.india p {
+    padding: 12px 0px 0px 15px;
+}
+
+.india img {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.number p {
+    @include flexprob;
+    background: $color3;
+    border-radius: 5px;
+    padding: 3px 30px;
+}
+
+.credit {
+    background: #024B5C;
+    padding: 0px 15px 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.credit span {
+    font-size: 13px;
+    white-space: nowrap;
+    padding-top: 10px;
+}
+
+progress {
+    accent-color: $color4;
+    width: 115px;
+    border-radius: 10px;
+    height: 5px;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: $color3;
+    border-radius: 40px;
+}
+
+progress[value]::-webkit-progress-value {
+    border-radius: 40px;
+    background-color: $color4;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* SWITCH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.switch-wrapper {
+    position: relative;
+    display: inline-flex;
+    padding: 15px 0px;
+    border: 1px solid lightgrey;
+    border-radius: 50px;
+    background: $color3;
+    text-align: center;
+    margin-left: 30px;
+}
+
+
+.switch-wrapper [type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"],
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"] {
+    color: red;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"]:hover,
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"]:hover {
+    background: transparent;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly+label[for="yearly"]~.highlighter {
+    transform: none;
+}
+
+.switch-wrapper [type="radio"]:checked#yearly+label[for="monthly"]~.highlighter {
+    transform: translateX(100%);
+}
+
+.switch-wrapper label {
+    font-size: 16px;
+    z-index: 1;
+    min-width: 85px;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: color 0.25s ease-in-out;
+}
+
+.switch-wrapper label:hover {
+    background: var(--lightgray);
+}
+
+.switch-wrapper .highlighter {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 50px;
+    background: var(--darkgreen);
+    transition: transform 0.25s ease-in-out;
+}
+
+/* TABLE STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.table-wrapper {
+    background: $textcolor;
+    color: $color3;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 15px 30px;
+
+}
+
+table {
+    width: 100%;
+    color: #000;
+    table-layout: auto;
+}
+
+.table thead {
+    background: #E4E4E4;
+    font-size: 12px;
+}
+
+
+.table thead th:first-child {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.table thead th:last-child {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.table tr {
+    padding: 5px 10px !important;
+}
+
+.table tr th {
+    padding: 5px 10px;
+    border-top: none !important;
+    border-bottom: none !important;
+    vertical-align: middle;
+}
+
+.table td {
+    border-top: none !important;
+    vertical-align: middle !important;
+}
+
+.table td:nth-child(2) {
+    color: #5E7484;
+}
+
+.fa-plus-circle {
+    font-size: 18px !important;
+    color: #4BC337;
+}
+
+.fa-minus-circle {
+    color: red;
+    font-size: 18px !important;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+    @include flexprob;
+}
+
+.list-pitch {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    @include flexprob;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background: $color5 !important;
+    border-radius: 30px;
+    border: none;
+    color: $textcolor !important;
+    padding: 20px 30px !important;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+    outline: none;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    outline: none;
+    border-color: none !important;
+}
+
+.nav-tabs .nav-link {
+    border: none !important;
+    color: #fff;
+}
+
+.cricket-pitch {
+    background-image: url("./images/pitch_img.png");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+    margin: 30px 15px 30px 15px;
+}
+
+.ms-dhoni {
+    background: $textcolor;
+    width: 100px;
+    margin: 0 auto;
+    color: #000;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.batsman {
+    background: $textcolor;
+    width: 100px;
+    color: #000;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 5px 10px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.wk {
+    background: $color5;
+    color: $textcolor;
+    border-radius: 50%;
+    line-height: normal;
+}
+
+.notification {
+    background-color: $color5;
+    color: $textcolor;
+    text-decoration: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    @include flexprob;
+    border-radius: 50%;
+    margin: 30px;
+}
+
+.notification:hover {
+    background: red;
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.continue {
+    padding: 10px 50px !important;
+    background: $color5 !important;
+    color: $textcolor !important;
+    border-radius: 5px;
+}
+
+
+
+@media only screen and (max-width:767px) {
+    .box {
+        height: auto;
+    }
+}
